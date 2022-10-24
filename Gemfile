@@ -21,6 +21,9 @@ gem 'active_model_serializers'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Enabling cross-origin requests
+gem 'rack-cors'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
