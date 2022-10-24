@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_155718) do
     t.string "title"
     t.string "description"
     t.string "timeframe"
+    t.string "route"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

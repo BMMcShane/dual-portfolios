@@ -4,6 +4,7 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :description
       t.string :timeframe
+      t.string :route
       t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
