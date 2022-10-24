@@ -10,10 +10,10 @@ puts "Seeding Database 🌱🍃🌱🍃🌱🍃"
 
 puts "Creating Users 👤"
 # Elliot
-User.create(name: "Elliot Mangini", username: "elliotmangini", bio: "sample bio", img_url: "https://pbs.twimg.com/profile_images/1563896122292465665/No1oJcdm_400x400.jpg", email: "elliot.mangini@gmail.com", password_digest: "1234")
+User.create(name: "Elliot Mangini", username: "elliotmangini", bio: "sample bio", img_url: "https://pbs.twimg.com/profile_images/1563896122292465665/No1oJcdm_400x400.jpg", email: "elliot.mangini@gmail.com", password: "1234")
 Link.create(user_id: User.first.id, name: "LinkedIn", url: "https://www.linkedin.com/in/elliotmangini/")
 # Ben
-User.create(name: "Ben McShane", username: "benmcshane", bio: "sample bio", img_url: "test", email: "test", password_digest: "1234")
+User.create(name: "Ben McShane", username: "benmcshane", bio: "sample bio", img_url: "test", email: "test", password: "1234")
 Link.create(user_id: User.second.id, name: "LinkedIn", url: "https://www.linkedin.com/in/benjamin-mcshane/")
 
 puts "Creating Projects 🗒"
