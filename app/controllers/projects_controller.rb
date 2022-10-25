@@ -13,6 +13,19 @@ class ProjectsController < ApplicationController
         render json: User.find(params[:user_id]), status: :created
     end
 
+    def update
+        project = Project.find(params[:id])
+        project.update!(project_params)
+        render json: User.find(params[:user_id]), status: :accepted
+    end
+
+    def destroy
+        project = Project.find(params[:id])
+        user = User.find(project.user_id)
+        project.destroy
+        render json: user
+    end
+
     private
 
     def project_params
