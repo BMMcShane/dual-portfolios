@@ -7,13 +7,13 @@ class ProjectsController < ApplicationController
             Award.create(name: s, project_id: project.id)
         end
 
-        languageArray = params[:language].split(", ")
+        languageArray = params[:languages].split(", ")
         languageArray.each do |l|
             lang = nil
-            if Language.find_by(name: params[:languages])
-                lang = Language.find_by(name: params[:languages])
+            if Language.find_by(name: l)
+                lang = Language.find_by(name: l)
             else
-                lang = Language.create(name: params[:languages])
+                lang = Language.create(name: l)
             end
             ProjectLanguage.create(project_id: project.id, language_id: lang.id)
         end
@@ -22,7 +22,23 @@ class ProjectsController < ApplicationController
 
     def update
         project = Project.find(params[:id])
-        project.update!(project_params)
+        project.awards.destroy_all
+        project.project_languages.destroy_all
+        awardArray = params[:awards].split(", ")
+        awardArray.each do |s|
+            Award.create(name: s, project_id: project.id)
+        end
+        languageArray = params[:languages].split(", ")
+        languageArray.each do |l|
+            lang = nil
+            if Language.find_by(name: l)
+                lang = Language.find_by(name: l)
+            else
+                lang = Language.create(name: l)
+            end
+            ProjectLanguage.create(project_id: project.id, language_id: lang.id)
+        end
+        project.update!(user_id: params[:user_id], title: params[:title], description: params[:description], timeframe: params[:timeframe], route: params[:route])
         render json: User.find(params[:user_id]), include: ['projects', 'projects.awards', 'projects.languages'], status: :accepted
     end
 
