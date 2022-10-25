@@ -19,7 +19,7 @@ Link.create(user_id: User.second.id, name: "LinkedIn", url: "https://www.linkedi
 puts "Creating Projects 🗒"
 # Elliot
 Project.create(user_id: User.first.id, title: "174!", description: "drum machine", timeframe: "Two Weeks - August 2022", route: "174")
-Award.create(project_id: User.first.projects.first.id, name: "cool project aware")
+Award.create(project_id: User.first.projects.first.id, name: "cool project award")
 # Ben
 Project.create(user_id: User.second.id, title: "test", description: "test", timeframe: "test", route: "ProjectOne")
 Award.create(project_id: User.second.projects.first.id, name: "very cool project award")
