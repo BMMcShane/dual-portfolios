@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :project_languages
   resources :awards
   resources :projects
-  resources :links
   resources :users
 
   post "/signup", to: "users#create"

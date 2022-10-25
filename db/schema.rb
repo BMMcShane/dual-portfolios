@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_155718) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_25_194444) do
   create_table "awards", force: :cascade do |t|
     t.string "name"
     t.integer "project_id", null: false
@@ -23,15 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_155718) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "links", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_links_on_user_id"
   end
 
   create_table "project_languages", force: :cascade do |t|
@@ -66,7 +57,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_155718) do
   end
 
   add_foreign_key "awards", "projects"
-  add_foreign_key "links", "users"
   add_foreign_key "project_languages", "languages"
   add_foreign_key "project_languages", "projects"
   add_foreign_key "projects", "users"
