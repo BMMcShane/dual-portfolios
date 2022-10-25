@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from 'react-router-dom';
+import style from "../StyleSheets/LoginSignUp.module.css";
 
-export default function LoginSignUp({ user, onLogin }) {
+export default function LoginSignUp({ setLogging, user, onLogin }) {
   const [logUsername , setLogUsername ] = useState("");
   const [logPassword , setLogPassword ] = useState("");
   const [username, setUsername] = useState("");
@@ -67,11 +68,27 @@ export default function LoginSignUp({ user, onLogin }) {
     });
   }
 
+  function forceLog () {
+    if (!isLogging) {
+      setIsCreating(false);
+    }
+    setIsLogging(!isLogging);
+  }
+
+  function forceCreate () {
+    if (!isCreating) {
+      setIsLogging(false);
+    }
+    setIsCreating(!isCreating);
+  }
+
   return (
-    <>
+    <div id={style.popup_container}>
+      <div id={style.popup}>
       <h1>Sign In If You Are An Admin</h1>
-      <button onClick={() => setIsLogging(true)}>Admin Login</button>
+      <button onClick={() => forceLog()}>Admin Login</button>
       {isLogging ? (
+        <div id={style.login_form}>
         <form onSubmit={handleLogin}>
           <input
             type="text"
@@ -91,10 +108,11 @@ export default function LoginSignUp({ user, onLogin }) {
           />
           <button type="submit">{isLoading ? "Loading..." : "Log In"}</button>
         </form>
+        </div>
       ) : null}
 
       <h1>Otherwise Make An Admin Account</h1>
-      <button onClick={() => setIsCreating(true)}>Make An Account</button>
+      <button onClick={() => forceCreate()}>Make An Account</button>
       {isCreating ? (
         <form onSubmit={handleSignup}>
           <input
@@ -149,10 +167,16 @@ export default function LoginSignUp({ user, onLogin }) {
           ))}
         </form>
       ) : null}
+      <br />
+      <br />
+      <button onClick={() => setLogging(false)}>
+            Exit
+      </button>
 
       { user ?
       <Navigate to="/Dashboard" />
       : null}
-    </>
+      </div>
+    </div>
   );
 }

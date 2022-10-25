@@ -1,0 +1,31 @@
+#NavBar {
+    text-align: center;
+    background-color: lightsalmon;
+}
+
+
+#header {
+    line-height: 200px;
+}
+
+#login_btn_div {
+    margin: auto;
+    display: flex;
+}
+#login_btn {
+    background-color: lightgreen;
+}
+
+#nav_btn_bar {
+    background-color: aqua;
+    display: flex;
+}
+.NavButtonDiv {
+    flex-grow: 1;
+    flex: 1;
+}
+.NavButton {
+    padding: 2.5%;
+    background-color: lightblue;
+    width: 100%
+}

@@ -1,6 +1,7 @@
 import { redirect, NavLink, Link } from "react-router-dom";
 import { useState } from 'react';
 import LoginSignUp from './LoginSignUp';
+import style from "../StyleSheets/NavBar.module.css";
 
 export default function NavBar({ user, onLogin }) {
     const [ logging, setLogging ] = useState(false);
@@ -17,30 +18,55 @@ export default function NavBar({ user, onLogin }) {
 
   return (
     <>
-      {/* <h1>Navbar Goes Here</h1> */}
-      <nav>
+      <nav id={style.NavBar}>
 
+        <div id={style.header}>
+        <h1>Logo PlaceHolder</h1>
+        </div>
+
+        <div id={style.nav_btn_bar}>
         {user ?
-        <button onClick={handleLogout}>Log Out</button>
+        <div className={style.NavButtonDiv}>
+        <button className={style.NavButton} onClick={handleLogout}>Log Out</button>
+        </div>
         :null}
 
         {user ?
-        <NavLink to="/Dashboard">Dashboard</NavLink>
-        :
-        <button onClick={() => setLogging(true)} >Login/SignUp</button>
-        }
+        <NavLink className={style.NavButtonDiv} to="/Dashboard">
+          <button className={style.NavButton}>Dashboard</button>
+        </NavLink>
+        : null }
+        
+        {!logging ?
+        <div className={style.NavButtonDiv}>
+          <button className={style.NavButton} onClick={() => setLogging(true)} >Login/SignUp</button>
+        </div>
+        : null}
 
         {logging ?
-        <LoginSignUp user={user} onLogin={onLogin} />
+        <>
+          <LoginSignUp setLogging={setLogging} user={user} onLogin={onLogin} />
+        </>
         :
         null
         }
 
-        <NavLink to="/">About</NavLink>
+        { !logging ?
+        <>
+        <NavLink className={style.NavButtonDiv} to="/">
+        <button className={style.NavButton}>About</button>
+        </NavLink>
 
-        <NavLink to="/Ben">Ben</NavLink>
+        <NavLink className={style.NavButtonDiv} to="/Ben">
+        <button className={style.NavButton}>Ben</button>
+        </NavLink>
 
-        <NavLink to="/Elliot">Elliot</NavLink>
+        <NavLink className={style.NavButtonDiv} to="/Elliot">
+        <button className={style.NavButton}>Elliot</button>
+        </NavLink>
+        </>
+        : null }
+        </div>
       </nav>
     </>
   );

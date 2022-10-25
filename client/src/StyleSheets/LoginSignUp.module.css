@@ -1,0 +1,21 @@
+
+#popup_container {
+    position: relative;
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#popup {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 5%);
+    background-color: gray;
+    border: black 3px solid;
+}
+
+#login_form {
+    color: black;
+}
