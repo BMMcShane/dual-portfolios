@@ -35,7 +35,7 @@ export default function Elliot ({ database }) {
 
 
             { isEntered ?
-            <div id={style.project_container}>
+            <div className={style.project_container}>
                 {projects}
             </div>
             : null }

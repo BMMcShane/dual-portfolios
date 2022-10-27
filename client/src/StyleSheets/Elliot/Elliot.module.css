@@ -1,7 +1,5 @@
 body {
-  margin: 0;
-  height: 100%;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .elliot {
@@ -26,9 +24,9 @@ body {
   --txt: #ffff00;
   --bkg: #18191f;
 
-  margin: 0;
-  height: 100%;
-  overflow: hidden
+  justify-content: center;
+  align-content: center;
+
 }
 
 /* #splash_background {
@@ -110,17 +108,16 @@ input[type="checkbox"]:not(:checked) ~ div {
 }
 
 .project_container {
-  position: absolute;
-  flex-direction: right;
   top: 10%;
-  left: 60%;
+  right: 0%;
+  position: fixed;
+  width: 10%;
+  margin: 0;
 }
 
 .project_title {
-  position: absolute;
-  flex-direction: right;
-  top: 10%;
-  left: 60%;
+  float: right;
+  text-align: right;
   font-size: 9rem;
   min-width: 0%;
   padding-right: 12rem;
