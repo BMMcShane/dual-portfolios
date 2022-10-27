@@ -13,8 +13,6 @@ export default function Elliot ({ database }) {
         new Audio(soundtrack).play();
     }
 
-    console.log(database)
-
     const projects = database[0].projects.map((p) => {
         return (
             <ElliotProject key={uuid()} p={p} />
@@ -24,6 +22,9 @@ export default function Elliot ({ database }) {
     return (
         <div id={style.splash_background} className={style.elliot}>
             <div id={style.cover}></div>
+            <video id="myVideo" loop autoPlay muted>
+                <source src={video} type="video/mp4" />
+            </video>
 
             { !isEntered ?
             <li>
@@ -34,7 +35,9 @@ export default function Elliot ({ database }) {
 
 
             { isEntered ?
-            projects
+            <div id={style.project_container}>
+                {projects}
+            </div>
             : null }
 
 
@@ -55,9 +58,6 @@ export default function Elliot ({ database }) {
 
 
 
-            <video id="myVideo" loop autoPlay muted>
-                <source src={video} type="video/mp4" />
-            </video>
 
         </div>
     )

@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden
+}
+
 .elliot {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -20,8 +26,9 @@
   --txt: #ffff00;
   --bkg: #18191f;
 
-  width: 100%;
+  margin: 0;
   height: 100%;
+  overflow: hidden
 }
 
 /* #splash_background {
@@ -43,15 +50,15 @@
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
   animation-delay: 2s;
+  z-index: -2;
 }
 
 #myVideo {
-  position: absolute;
-  display: flex;
+  position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 li {
@@ -102,14 +109,19 @@ input[type="checkbox"]:not(:checked) ~ div {
   }
 }
 
-.project_title {
-  font-size: 9rem;
-  display: flex;
+.project_container {
   position: absolute;
-  background-color: transparent;
-  justify-content: center;
+  flex-direction: right;
   top: 10%;
   left: 60%;
+}
+
+.project_title {
+  position: absolute;
+  flex-direction: right;
+  top: 10%;
+  left: 60%;
+  font-size: 9rem;
   min-width: 0%;
   padding-right: 12rem;
   color: var(--bkg);
