@@ -22,7 +22,7 @@ body {
   /* background-color: #18191f */
 
   --txt: #ffff00;
-  --bkg: #18191f;
+  --bkg: #14151a;
 
   justify-content: center;
   align-content: center;
@@ -108,19 +108,30 @@ input[type="checkbox"]:not(:checked) ~ div {
 }
 
 .project_container {
+  border: .2rem solid red;
   top: 10%;
-  right: 0%;
+  right: 5%;
   position: fixed;
   width: 10%;
   margin: 0;
 }
 
+/* .swing_container {
+  border: .2rem solid green;
+  perspective-origin: right;
+  transform: perspective(40rem) rotateY(-6deg);
+
+} */
+
 .project_title {
+  transform: perspective(40rem) rotateY(-6deg);
+  perspective-origin: right;
+  border: .2rem solid red;
+  margin-bottom: 3rem;
   float: right;
   text-align: right;
   font-size: 9rem;
   min-width: 0%;
-  padding-right: 12rem;
   color: var(--bkg);
   font-family: system-ui, sans-serif;
   font-weight: bold;
@@ -128,8 +139,19 @@ input[type="checkbox"]:not(:checked) ~ div {
   -webkit-text-stroke-color: var(--txt);
 }
 
+@keyframes swing {
+  0% {
+    transform: perspective(40rem) rotateY(-6deg);
+  }
+  100% {
+    transform: perspective(40rem) rotateY(6deg);
+  }
+}
+
 .project_title:hover {
   color: var(--txt);
+  animation: swing .2s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeout {
