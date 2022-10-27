@@ -124,8 +124,9 @@ input[type="checkbox"]:not(:checked) ~ div {
 } */
 
 .project_title {
+  transform-origin: right;
   transform: perspective(40rem) rotateY(-6deg);
-  perspective-origin: right;
+  transition: transform 500ms;
   border: .2rem solid red;
   margin-bottom: 3rem;
   float: right;
@@ -139,19 +140,20 @@ input[type="checkbox"]:not(:checked) ~ div {
   -webkit-text-stroke-color: var(--txt);
 }
 
-@keyframes swing {
+/* @keyframes swing {
   0% {
     transform: perspective(40rem) rotateY(-6deg);
   }
   100% {
     transform: perspective(40rem) rotateY(6deg);
   }
-}
+} */
 
 .project_title:hover {
+  transform: rotateY(3deg);
   color: var(--txt);
-  animation: swing .2s;
-  animation-fill-mode: forwards;
+  /* animation: swing .2s;
+  animation-fill-mode: forwards; */
 }
 
 @keyframes fadeout {
