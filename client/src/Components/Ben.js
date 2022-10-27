@@ -1,6 +1,8 @@
 import NavBar from './NavBar';
 
-export default function ({ user, onLogin }) {
+export default function ({ database, user, onLogin }) {
+
+    console.log(database)
 
     return (
         <>

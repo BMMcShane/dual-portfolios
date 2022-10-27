@@ -6,6 +6,9 @@ import About from "./About";
 import Ben from "./Ben";
 import Elliot from "./Elliot";
 import Dashboard from "./Dashboard";
+import UpQuest from "../Components/Elliot/UpQuest"
+import Foley from "../Components/Elliot/Foley"
+import OneSeventyFour from "../Components/Elliot/174"
 
 export default function App() {
   const [database, setDatabase] = useState(undefined);
@@ -15,7 +18,9 @@ export default function App() {
     // auto-login
     fetch("/me").then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => {
+          setUser(user)
+        });
       }
     });
   }, []);
@@ -31,6 +36,10 @@ export default function App() {
   return (
     <>
       <Routes>
+        <Route path="/UpQuest" element={<UpQuest />} />
+        <Route path="/174" element={<OneSeventyFour />} />
+        <Route path="/Foley" element={<Foley />} />
+
         <Route path="/" element={<About user={user} onLogin={setUser} />} />
         { database ?
         <>

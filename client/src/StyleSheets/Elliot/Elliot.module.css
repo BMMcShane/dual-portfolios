@@ -29,15 +29,6 @@ body {
 
 }
 
-/* #splash_background {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-} */
-
 #cover {
   display: flex;
   position: absolute;
@@ -81,12 +72,12 @@ label {
   cursor: pointer;
   margin: 0 4px;
   border-radius: 20px;
-  z-index: 2;
+  z-index: 0;
 }
 
 input[type="checkbox"] {
   position: absolute;
-  opacity: 0;
+  opacity: 100;
   cursor: pointer;
 }
 
@@ -108,27 +99,21 @@ input[type="checkbox"]:not(:checked) ~ div {
 }
 
 .project_container {
-  border: .2rem solid red;
-  top: 10%;
-  right: 5%;
+  /* border: .2rem solid red; */
+  top: 12%;
+  right: 6.5%;
   position: fixed;
   width: 10%;
   margin: 0;
 }
 
-/* .swing_container {
-  border: .2rem solid green;
-  perspective-origin: right;
-  transform: perspective(40rem) rotateY(-6deg);
-
-} */
-
 .project_title {
   transform-origin: right;
   transform: perspective(40rem) rotateY(-6deg);
   transition: transform 500ms;
-  border: .2rem solid red;
-  margin-bottom: 3rem;
+  /* border: .2rem solid red; */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   float: right;
   text-align: right;
   font-size: 9rem;

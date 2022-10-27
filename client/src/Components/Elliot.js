@@ -5,10 +5,12 @@ import { useState } from 'react';
 import ElliotProject from './Elliot/ElliotProject';
 import { v4 as uuid } from "uuid";
 
+
 export default function Elliot ({ database }) {
     const [ isEntered , setIsEntered ] = useState(false)
 
     function enter() {
+        console.log("clicked")
         setIsEntered(true);
         new Audio(soundtrack).play();
     }
@@ -20,25 +22,28 @@ export default function Elliot ({ database }) {
     })
 
     return (
-        <div id={style.splash_background} className={style.elliot}>
+        <>
+        <div className={style.elliot}>
+            
             <div id={style.cover}></div>
             <video id="myVideo" loop autoPlay muted>
                 <source src={video} type="video/mp4" />
             </video>
 
-            { !isEntered ?
-            <li>
+
+            {/* { !isEntered ? */}
+            {/* <li>
                 <input type="checkbox" />
                 <div className={style.lightup_div} onClick={enter}>E N T E R</div>
-            </li>
-            : null }
+            </li> */}
+            {/* : null } */}
 
 
-            { isEntered ?
+            {/* { isEntered ? */}
             <div className={style.project_container}>
                 {projects}
             </div>
-            : null }
+            {/* : null } */}
 
 
 
@@ -60,5 +65,6 @@ export default function Elliot ({ database }) {
 
 
         </div>
+        </>
     )
 }
