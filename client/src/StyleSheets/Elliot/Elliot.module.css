@@ -1,0 +1,133 @@
+.elliot {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  /* COLOR IDEAS */
+  /* color: gold;
+    background-color: #101c12; */
+
+  /* color: hotpink;
+    background-color: #342667; */
+
+  /* color: #ffff00;
+    background-color: #4c1861; */
+
+  /* background-color: #18191f */
+
+  --txt: #ffff00;
+  --bkg: #18191f;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* #splash_background {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+} */
+
+#cover {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bkg);
+  animation: fadeout 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+}
+
+#myVideo {
+  position: absolute;
+  display: flex;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+label {
+  position: relative;
+}
+
+.lightup_div {
+  position: absolute;
+  background: transparent;
+  color: rgb(44, 44, 44);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  top: -5%;
+  justify-content: center;
+  align-items: center;
+  font-size: 9rem;
+  cursor: pointer;
+  margin: 0 4px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:not(:checked) ~ div {
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+    inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+  color: yellow;
+  text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+  animation: glow 8s linear infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.project_title {
+  font-size: 9rem;
+  display: flex;
+  position: absolute;
+  background-color: transparent;
+  justify-content: center;
+  top: 10%;
+  left: 60%;
+  min-width: 0%;
+  padding-right: 12rem;
+  color: var(--bkg);
+  font-family: system-ui, sans-serif;
+  font-weight: bold;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: var(--txt);
+}
+
+.project_title:hover {
+  color: var(--txt);
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}

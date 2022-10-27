@@ -37,7 +37,7 @@ export default function NavBar({ user, onLogin }) {
         </NavLink>
         : null }
         
-        {!logging ?
+        {!logging && !user ?
         <div className={style.NavButtonDiv}>
           <button className={style.NavButton} onClick={() => setLogging(true)} >Login/SignUp</button>
         </div>

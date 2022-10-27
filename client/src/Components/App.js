@@ -8,7 +8,7 @@ import Elliot from "./Elliot";
 import Dashboard from "./Dashboard";
 
 export default function App() {
-  const [database, setDatabase] = useState({});
+  const [database, setDatabase] = useState(undefined);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -32,8 +32,12 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<About user={user} onLogin={setUser} />} />
-        <Route path="/Ben" element={<Ben database={database} user={user} onLogin={setUser} />} />
-        <Route path="/Elliot" element={<Elliot database={database} user={user} onLogin={setUser} />} />
+        { database ?
+        <>
+          <Route path="/Ben" element={<Ben database={database} user={user} onLogin={setUser} />} />
+          <Route path="/Elliot" element={<Elliot database={database} user={user} onLogin={setUser} />} />
+        </>
+        : null }
 
         { user ?
         <Route path="/Dashboard" element={<Dashboard user={user} setUser={setUser} onLogin={setUser} />} />

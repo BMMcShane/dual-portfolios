@@ -13,9 +13,11 @@ export default function ProjectList ({ user, setUser }) {
 
     const projects = user.projects.map((p) => {
         return (
-        <ProjectCard user={user} setUser={setUser} key={uuid()} project={p} />
+            <ProjectCard user={user} setUser={setUser} key={uuid()} project={p} />
         )
     })
+
+    
 
     function handleAddProject(e) {
         e.preventDefault();

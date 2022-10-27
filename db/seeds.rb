@@ -18,8 +18,9 @@ User.create(name: "Ben McShane", username: "benmcshane", bio: "sample bio", img_
 
 puts "Creating Projects 🗒"
 # Elliot
-Project.create(user_id: User.first.id, title: "174!", description: "drum machine", timeframe: "Two Weeks - August 2022", route: "174")
-Award.create(project_id: User.first.projects.first.id, name: "cool project award")
+Project.create(user_id: User.first.id, title: "UpQuest!", description: "Track your fun", timeframe: "One Week - Oct. 2022", route: "Upquest")
+Project.create(user_id: User.first.id, title: "Foley Generator 3000!", description: "Foley Assistant", timeframe: "One Weeks - Sept. 2022", route: "Foley")
+Project.create(user_id: User.first.id, title: "174!", description: "drum machine", timeframe: "Two Weeks - Aug 2022", route: "174")
 # Ben
 Project.create(user_id: User.second.id, title: "test", description: "test", timeframe: "test", route: "ProjectOne")
 Award.create(project_id: User.second.projects.first.id, name: "very cool project award")
