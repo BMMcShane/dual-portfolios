@@ -33,6 +33,8 @@ export default function Elliot ({ database }) {
                 <source src={video} type="video/mp4" />
             </video>
 
+            
+
 
             <div id={style.details}>
                 <div className={style.glyphbar}></div>

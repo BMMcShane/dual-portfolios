@@ -213,6 +213,29 @@ input[type="checkbox"]:not(:checked) ~ div {
   /* border: .2rem solid red; */
 }
 
+/* transition shapes */
+.expanding_circle {
+  display: flex;
+  position: absolute;
+  background-color: ivory;
+  top: 45%;
+  right: 395%;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  animation: expand 1s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(50);
+  }
+}
+
 /* utility classes */
 .hidden {
   visibility: hidden;
