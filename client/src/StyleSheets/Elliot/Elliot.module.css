@@ -1,5 +1,13 @@
+#wrapper {
+  clear: both;
+}
+
 body {
+  margin: 0px;
   overflow: hidden;
+  height:100vh;
+  border:solid;
+  overflow-y: scroll;
 }
 
 .elliot {
@@ -26,14 +34,15 @@ body {
 
   justify-content: center;
   align-content: center;
+  /* overflow-y: scroll; */
 
 }
 
 #cover {
   display: flex;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   background-color: var(--bkg);
   animation: fadeout 1.5s;
   animation-fill-mode: forwards;
@@ -42,12 +51,17 @@ body {
   z-index: -2;
 }
 
-#myVideo {
+#video_container {
+  margin: -1rem;
   position: fixed;
+}
+
+#myVideo {
+  position: sticky;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   z-index: -100;
 }
 
@@ -103,7 +117,7 @@ input[type="checkbox"]:not(:checked) ~ div {
   /* border: .2rem solid red; */
   top: 12%;
   right: 7%;
-  position: fixed;
+  position: absolute;
   width: 10%;
   margin: 0;
 }
@@ -125,7 +139,7 @@ input[type="checkbox"]:not(:checked) ~ div {
 }
 
 .project_title {
-  transform: perspective(40rem) rotateY(-8deg);
+  transform: perspective(40rem) rotateY(-9deg);
   color: var(--bkg);
 }
 
@@ -192,7 +206,7 @@ input[type="checkbox"]:not(:checked) ~ div {
 }
 
 #details {
-  position: absolute;
+  position: fixed;
   top: 6%;
   left: 4%;
   height: 5rem;
@@ -223,7 +237,7 @@ input[type="checkbox"]:not(:checked) ~ div {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  animation: expand 1s ease-in;
+  animation: expand .8s ease-in;
   animation-fill-mode: forwards;
 }
 

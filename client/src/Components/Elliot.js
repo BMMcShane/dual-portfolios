@@ -28,10 +28,12 @@ export default function Elliot ({ database }) {
         <div className={style.elliot}>
 
             {/* KEEP THIS SHIT AT THE TOP */}
+            <div id={style.video_container}>
             <div id={style.cover}></div>
             <video id="myVideo" loop autoPlay muted>
                 <source src={video} type="video/mp4" />
             </video>
+            </div>
 
             
 
