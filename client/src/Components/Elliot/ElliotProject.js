@@ -4,13 +4,18 @@ import { useState } from 'react';
 
 export default function ElliotProject ({ p, isClicked, setIsClicked, selectedProject, setSelectedProject }) {
     const [ go , setGo ] = useState(false);
+    const [ isLeaving, setIsLeaving ] = useState(false);
 
-    function animateAndNavigate () {
+    function animate () {
         setSelectedProject(p.title);
         setIsClicked(true);
+    }
+
+    function animateAndNavigate() {
+        setIsLeaving(true);
         setTimeout(() => {
             setGo(true)
-        }, 1000);
+        }, 100000);
     }
 
     return (
@@ -19,12 +24,18 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
                 <Navigate to={`/${p.route}`} />
             : null}
 
-            { selectedProject === ""
-            ?
-            <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + (isClicked && (p.title !== selectedProject) ? `${style.project_title} ${style.swing_away}` : style.project_title )}>{p.title}</h1>
-            :
-            <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + (isClicked && (p.title !== selectedProject) ? `${style.project_title} ${style.swing_away}` : style.project_title_stabilized )}>{p.title}</h1>
-            }
+            {/* LOAD ALL SAME */}
+            {selectedProject === "" ?
+            <h1 onClick={() => animate()} className={`${style.project_title_basic} ${style.project_title}`}>{p.title}</h1> : null }
+
+            {/* Project w/ matching title stabilizes, others swing away. */}
+            { isClicked && !isLeaving ?
+            <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + ((p.title !== selectedProject) ? `${style.project_title} ${style.swing_away}` : style.project_title_stabilized )}>{p.title}</h1> : null}
+            
+            { isLeaving ?
+            <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + ((p.title !== selectedProject) ? `${style.hidden}` : `${style.project_title} ${style.final_swing}` )}>{p.title}</h1> : null}
+
+
 
         </>
     )

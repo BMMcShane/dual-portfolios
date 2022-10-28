@@ -10,7 +10,6 @@ export default function Elliot ({ database }) {
     // const [ isEntered , setIsEntered ] = useState(false)
     const [ selectedProject , setSelectedProject ] = useState("")
     const [ isClicked , setIsClicked ] = useState(false);
-    const [ go , setGo ] = useState(false);
 
     // function enter() {
     //     console.log("clicked")

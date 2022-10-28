@@ -149,9 +149,27 @@ input[type="checkbox"]:not(:checked) ~ div {
   /* transform: rotateY(-90deg) */
 }
 
+.final_swing {
+  animation: final_swing .6s ease-in;
+  animation-fill-mode: forwards;
+}
+
 @keyframes swing_away {
   0% {
     transform: perspective(40rem) rotateY(-8deg);
+    opacity: 100%;
+    filter: blur(0)
+  }
+  100% {
+    transform: perspective(40rem) rotateY(-90deg);
+    opacity: 80%;
+    filter: blur(.2rem);
+  }
+}
+
+@keyframes final_swing {
+  0% {
+    transform: perspective(40rem) rotateY(0deg);
     opacity: 100%;
     filter: blur(0)
   }
@@ -187,4 +205,9 @@ input[type="checkbox"]:not(:checked) ~ div {
   border-radius: .5rem;
   background-color: rgb(76, 76, 76);
   /* border: .2rem solid red; */
+}
+
+/* utility classes */
+.hidden {
+  visibility: hidden;
 }
