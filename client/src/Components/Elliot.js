@@ -8,6 +8,8 @@ import { v4 as uuid } from "uuid";
 
 export default function Elliot ({ database }) {
     const [ isEntered , setIsEntered ] = useState(false)
+    const [ selectedProject , setSelectedProject ] = useState("")
+    const [ isClicked , setIsClicked ] = useState(false);
 
     function enter() {
         console.log("clicked")
@@ -17,7 +19,7 @@ export default function Elliot ({ database }) {
 
     const projects = database[0].projects.map((p) => {
         return (
-            <ElliotProject key={uuid()} p={p} />
+            <ElliotProject setIsClicked={setIsClicked} isClicked={isClicked} selectedProject={selectedProject} setSelectedProject={setSelectedProject} key={uuid()} p={p} />
         )
     })
 
