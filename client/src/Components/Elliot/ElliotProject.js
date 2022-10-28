@@ -18,9 +18,14 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
             { go ?
                 <Navigate to={`/${p.route}`} />
             : null}
-            
-            <h1 onClick={() => animateAndNavigate()} className={ (isClicked && (p.title !== selectedProject) ? `${style.project_title} ${style.swing_away}` : style.project_title )}>{p.title}</h1>
-            <p>{p.description}</p>
+
+            { selectedProject === ""
+            ?
+            <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + (isClicked && (p.title !== selectedProject) ? `${style.project_title} ${style.swing_away}` : style.project_title )}>{p.title}</h1>
+            :
+            <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + (isClicked && (p.title !== selectedProject) ? `${style.project_title} ${style.swing_away}` : style.project_title_stabilized )}>{p.title}</h1>
+            }
+
         </>
     )
 }
