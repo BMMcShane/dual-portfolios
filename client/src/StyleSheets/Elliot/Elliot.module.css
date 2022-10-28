@@ -2,11 +2,14 @@
   clear: both;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0px;
   overflow: hidden;
   height:100vh;
-  border:solid;
   overflow-y: scroll;
 }
 
@@ -49,6 +52,15 @@ body {
   animation-timing-function: ease-in-out;
   animation-delay: 2s;
   z-index: -2;
+}
+
+#details {
+  position: fixed;
+  top: 6%;
+  left: 4%;
+  height: 5rem;
+  width: 6rem;
+  /* border: .2rem solid red; */
 }
 
 #video_container {
@@ -115,8 +127,10 @@ input[type="checkbox"]:not(:checked) ~ div {
 
 .project_container {
   /* border: .2rem solid red; */
+  height: 20rem;
   top: 12%;
   right: 7%;
+  /* POSSIBLE PROBLEM HERE */
   position: absolute;
   width: 10%;
   margin: 0;
@@ -129,11 +143,11 @@ input[type="checkbox"]:not(:checked) ~ div {
   margin-bottom: 2rem;
   float: right;
   text-align: right;
-  font-size: 9rem;
+  font-size: 7rem;
   min-width: 0%;
   font-family: system-ui, sans-serif;
   font-weight: bold;
-  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-width: 0.05rem;
   -webkit-text-stroke-color: var(--txt);
   transition: transform 500ms;
 }
@@ -200,18 +214,55 @@ input[type="checkbox"]:not(:checked) ~ div {
   }
 }
 
-@keyframes fadeout {
-  0% { opacity: 100%; }
-  100% { opacity: 0%; }
+.project_text_container {
+  /* align-items: left; */
+  border: .2rem solid transparent;
+  max-height: 0rem;
+  width: 36rem;
+  margin-left: -30rem;
+  border: .2rem solid red;
 }
 
-#details {
+.project_details {
   position: fixed;
-  top: 6%;
-  left: 4%;
-  height: 5rem;
-  width: 6rem;
+  right: 1%;
+  color: hotpink;
+  margin-top: 23rem;
+  max-height: 20rem;
+  max-width: 40rem;
+  border: .2rem solid transparent;
+  border: .2rem solid red;
+
+}
+
+@keyframes slide_in_left {
+
+}
+
+.tagline {
+  text-align: right;
+}
+
+.inline_block_p {
+  position: relative;
+  /* top: 15%; */
+  right: -64%;
+  display: inline-block;
   /* border: .2rem solid red; */
+}
+
+.language_p {
+  display: inline-block;
+  margin-top: 1rem;
+  /* margin: 0; */
+  font-size: .7rem;
+  /* border: .2rem solid red; */
+}
+
+.timeframe {
+  font-size: 1.1rem;
+  text-align: right;
+  margin: 0;
 }
 
 #details:hover .glyphbar {
@@ -252,5 +303,11 @@ input[type="checkbox"]:not(:checked) ~ div {
 
 /* utility classes */
 .hidden {
-  visibility: hidden;
+  /* visibility: hidden; */
+  opacity: 0%;
+}
+
+#overscroll {
+  width: 10rem;
+  height: 115rem;
 }

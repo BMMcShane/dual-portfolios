@@ -9,6 +9,7 @@ import Dashboard from "./Dashboard";
 import UpQuest from "../Components/Elliot/UpQuest"
 import Foley from "../Components/Elliot/Foley"
 import OneSeventyFour from "../Components/Elliot/174"
+import Mountain from "../Components/Elliot/Mountain"
 
 export default function App() {
   const [database, setDatabase] = useState(undefined);
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/UpQuest" element={<UpQuest />} />
         <Route path="/174" element={<OneSeventyFour />} />
         <Route path="/Foley" element={<Foley />} />
+        <Route path="/Mountain" element={<Mountain />} />
 
         <Route path="/" element={<About user={user} onLogin={setUser} />} />
         { database ?

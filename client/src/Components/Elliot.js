@@ -59,25 +59,8 @@ export default function Elliot ({ database }) {
             </div>
             {/* : null } */}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <div id={style.overscroll}></div>
+            
         </div>
         </>
     )

@@ -19,7 +19,7 @@ User.create(name: "Ben McShane", username: "benmcshane", bio: "sample bio", img_
 puts "Creating Projects 🗒"
 # Elliot
 Project.create(user_id: User.first.id, title: "UpQuest!", description: "Track your fun", timeframe: "One Week - Oct. 2022", route: "UpQuest")
-Project.create(user_id: User.first.id, title: "Mountain!", description: "A Better To Do List", timeframe: "One Week - Sept. 2022", route: "Foley")
+Project.create(user_id: User.first.id, title: "Mountain!", description: "A Better To Do List", timeframe: "One Week - Sept. 2022", route: "Mountain")
 Project.create(user_id: User.first.id, title: "Foley Generator 3000!", description: "Foley Assistant", timeframe: "One Week - Sept. 2022", route: "Mountain")
 Project.create(user_id: User.first.id, title: "174!", description: "drum machine", timeframe: "Two Weeks - Aug 2022", route: "174")
 # Ben
