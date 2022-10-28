@@ -24,11 +24,19 @@ export default function Elliot ({ database }) {
     return (
         <>
         <div className={style.elliot}>
-            
+
+            {/* KEEP THIS SHIT AT THE TOP */}
             <div id={style.cover}></div>
             <video id="myVideo" loop autoPlay muted>
                 <source src={video} type="video/mp4" />
             </video>
+
+
+            <div id={style.details}>
+                <div className={style.glyphbar}></div>
+                <div className={style.glyphbar}></div>
+                <div className={style.glyphbar}></div>
+            </div>
 
 
             {/* { !isEntered ? */}
