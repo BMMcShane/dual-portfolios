@@ -47,8 +47,9 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
 
             <div className={style.project_details}>
                 <h1 className={style.tagline}>{p.description} . . .&nbsp;&nbsp;</h1>
+                <div id={style.thin_description_line}></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at facilisis risus. Curabitur ut nisl dui. Quisque sodales mauris ut lacinia mollis. Donec tortor leo, ultricies et lectus sed, efficitur luctus neque. Integer quis augue nunc. Proin facilisis tempor nulla vel mollis. Proin luctus, mauris non rutrum mattis, orci nunc lacinia est, vitae tristique erat mi id leo. In vitae semper sem.</p>
-                <h2 className={style.timeframe}>{p.timeframe} •</h2>
+                <h2 className={style.timeframe}>{p.timeframe}</h2>
                 <div className={style.inline_block_p}>
                 {languages}
                 </div>
