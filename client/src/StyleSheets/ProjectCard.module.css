@@ -1,0 +1,20 @@
+.project {
+    border: 5px outset orange;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: white;
+}
+
+textarea {
+    width: 50%;
+    height: 10vmin;
+}
+
+p {
+    font-weight: bold;
+}
+
+input {
+    width: 25%;
+}

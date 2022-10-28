@@ -1,23 +1,41 @@
 #NavBar {
     text-align: center;
-    background-color: lightsalmon;
+    background-color: #ee8e07;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* margin-top: 1%; */
+    border: #c46b18 1vmin solid;
 }
 
 
 #header {
-    line-height: 200px;
+    /* line-height: 200px; */
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    position: relative;
+}
+#header img {
+    width: 25%;
+    height: 15%;
 }
 
-#login_btn_div {
-    margin: auto;
-    display: flex;
+#loginbtndiv {
+    margin: 0;
+    position: absolute;
+    height: 3%;
+    left: 55%;
+    top: 58%;
 }
-#login_btn {
-    background-color: lightgreen;
+#loginbtn {
+    background-color: transparent;
+    border: transparent 5px solid;
+    border-radius: 50% 50% 50% 50%;
+    aspect-ratio: 1/1.25;
+    color: transparent;
 }
 
 #nav_btn_bar {
-    background-color: aqua;
     display: flex;
 }
 .NavButtonDiv {
@@ -26,6 +44,14 @@
 }
 .NavButton {
     padding: 2.5%;
-    background-color: lightblue;
-    width: 100%
+    background-color: white;
+    width: 100%;
+    border: orange outset 1vmin;
+    color: orange;
+    font-size: large;
+    font-family: "Arial Rounded MT Bold"
+}
+.NavButton:active {
+    border: orange inset 1vmin;
+
 }

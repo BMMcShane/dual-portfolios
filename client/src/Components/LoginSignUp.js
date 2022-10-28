@@ -98,6 +98,7 @@ export default function LoginSignUp({ setLogging, user, onLogin }) {
             placeholder="Username"
             onChange={(e) => setLogUsername(e.target.value)}
           />
+          <br />
           <input
             type="password"
             id="password"
@@ -106,6 +107,7 @@ export default function LoginSignUp({ setLogging, user, onLogin }) {
             onChange={(e) => setLogPassword(e.target.value)}
             autoComplete="current-password"
           />
+          <br />
           <button type="submit">{isLoading ? "Loading..." : "Log In"}</button>
         </form>
         </div>
@@ -123,6 +125,7 @@ export default function LoginSignUp({ setLogging, user, onLogin }) {
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
           />
+          <br />
           <input
             type="text"
             id="email"
@@ -131,6 +134,7 @@ export default function LoginSignUp({ setLogging, user, onLogin }) {
             placeholder="E-mail Address"
             onChange={(e) => setEmail(e.target.value)}
           />
+          <br />
           <input
             type="text"
             id="imageUrl"
@@ -138,13 +142,15 @@ export default function LoginSignUp({ setLogging, user, onLogin }) {
             placeholder="Profile Image URL"
             onChange={(e) => setImageUrl(e.target.value)}
           />
-          <input
+          <br />
+          <textarea
             rows="3"
-            id="bio"
+            id={style.bio}
             value={bio}
             placeholder="Enter your Bio"
             onChange={(e) => setBio(e.target.value)}
           />
+          <br />
           <input
             type="password"
             id="password"
@@ -153,6 +159,7 @@ export default function LoginSignUp({ setLogging, user, onLogin }) {
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
           />
+          <br />
           <input
             type="password"
             id="password_confirmation"
@@ -161,6 +168,7 @@ export default function LoginSignUp({ setLogging, user, onLogin }) {
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             autoComplete="current-password"
           />
+          <br />
           <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
           {errors.map((err) => (
             <p key={err}>{err}</p>

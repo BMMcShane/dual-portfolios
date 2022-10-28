@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "../StyleSheets/App.css";
-// import NavBar from "./NavBar";
 import About from "./About";
 import Ben from "./Ben";
 import Elliot from "./Elliot";

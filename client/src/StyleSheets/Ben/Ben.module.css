@@ -1,0 +1,254 @@
+body {
+    height: 100%;
+}
+body > div {
+    height: 100%;
+}
+#ben_page {
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(255, 255, 255),rgba(254, 254, 254, 0.902), rgba(255, 166, 0, 0), rgba(255, 255, 255, 0)), url(../Ben/Assets/background2.jpg);
+    
+    background-size: 100% 100%;
+
+}
+
+
+#portrait_total {
+    height: 60vh;
+    width: 100%;
+    align-items: center;
+    vertical-align: middle;
+    display: inline-flex;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    overflow: hidden;
+}
+#portrait_container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#orb {
+    width: 0px;
+    background-color: white;
+    animation-name: orb;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    float: left;
+    border-left: 10px solid orange;
+    border-right: 10px solid orange;
+    border-radius: 75% 75% 75% 75%;
+    z-index: 1;
+    aspect-ratio: 1/1;
+    background-color: rgb(244, 177, 55);
+}
+ @keyframes orb {
+ from {
+ width: 2%;
+ border-top: 5px solid #c46b18;
+ border-bottom: 5px solid #c46b18;
+ transform :rotate(60deg);
+ }
+ to {
+ width: 15%;
+ border-top: 10px solid #c46b18 ;
+ border-bottom: 10px solid #c46b18 ;
+ transform: rotate(0deg);
+ }}
+
+#me {
+    width: 100%;
+    height: 110%; 
+    border-radius: 75% 75% 75% 75%;
+    animation-name: me;
+    animation-duration: 2s;
+    animation-delay:1s ;
+    animation-fill-mode: forwards;
+    z-index: 0;
+    border-top: 5px solid transparent ;
+    opacity: 0%;
+
+}
+@keyframes me{
+    0% {
+        opacity: 0%;
+        margin-left: 250%;
+        transform: rotate(100deg);
+    }
+    100% {
+        opacity: 100%;
+        margin-left: 0;
+        transform: rotate(0deg);
+    }
+}
+
+#myname {
+    animation-name: nombre;
+    animation-delay: 2.5s;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+    opacity: 0%;
+    margin: 0;
+    font-size: 7vmin;
+    background:     
+    linear-gradient(to right, rgb(255, 255, 255),rgb(250, 180, 50), orange, rgb(255, 255, 255)), url(./Assets/tech.jpg); 
+    background-blend-mode: screen ;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+}
+@keyframes nombre {
+    from { opacity: 0%; margin-left: 0%;}
+    to { opacity: 100%; margin-left: 5%;}
+}
+
+#banner {
+    display: flex;
+    z-index: -1;
+}
+
+
+#myinfo {
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    height: 40vh;
+    border: outset orange 3vmin;
+    text-align: center;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: white;
+}
+#myinfo::-webkit-scrollbar {
+    display: none;
+  }
+  #myinfo p {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+#myprojects {
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    height: 80vh;
+    border: outset orange 3vmin;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    background-color: white;
+}
+#myprojects::-webkit-scrollbar {
+    display: none;
+  }
+#myprojects h2{
+    text-align: center;
+    line-height: normal;
+    margin-bottom: 0;
+}
+
+.projectblock {
+    margin-left: 10%;
+    margin-right: 10%;
+    border: outset orange 3px;
+    /* display: inline-flex; */
+}
+.projectblock img {
+    width: 100%;
+}
+.projectblock h3 {
+margin-left: 5%;
+}
+.projectblock p {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+.projectblock a {
+float: right;
+margin-right: 5%;
+}
+.projectblock h4 {
+    text-align: center;
+    
+}
+
+#mylinks {
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    height: 20vh;
+    border: outset orange 3vmin;
+    background-color: white;
+}
+#mylinks h2 {
+    text-align: center;
+}
+#linktable {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+#linktable div {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#linktable div a:link {
+    color:orange;
+}
+#linktable div a:visited {
+    color:#c46b18;
+}
+#linktable h4 {
+    margin-left: 5%;
+    margin-right: 5%;
+    color: rgb(72, 72, 72);
+}
+
+#return {
+    margin-left: 40vw;
+    /* margin-right: 40vw; */
+    width: 20vw;
+    text-align: right;
+    /* float: right; */
+}
+#return button {
+    background-color: transparent;
+    border: inset orange 5px;
+    padding: 1%;
+    color: white;
+    margin: 0%;
+    background-color: orange;
+}
+#return button:active {
+    border: outset #c46b18 5px ;
+    background-color: #c46b18;
+}
+
+
+hr {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), orange, rgba(0, 0, 0, 0));
+}
+
+#bigboy {
+    animation-name: appear ;
+    animation-delay: 3s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    transform: translateY(100%);
+    opacity: 0%;
+}
+@keyframes appear {
+    from {opacity: 0%; transform: translateY(100%);}
+    to {opacity: 100%; transform: translateY(0%);}
+}

@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+}
+
+body {
+    text-align: center;
+}
+
+textarea {
+    width: 50%;
+}
+
+#add {
+    background-color: #ee8e07;
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    border: #c46b18 outset 1vmin;
+}
+#add input {
+    width: 50%;
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import style from "../StyleSheets/ProjectCard.module.css"
 
 export default function ProjectCard({ project, setUser, user }) {
   const [title, setTitle] = useState(project.title);
@@ -47,10 +48,13 @@ export default function ProjectCard({ project, setUser, user }) {
   }
 
   return (
-    <>
+    <div className={style.project}>
       <h1>{project.title}</h1>
       <p>{project.description}</p>
-      <button onClick={() => setEditing(!editing)}>Edit</button>
+      <p>{project.timeframe}</p>
+      <p></p>
+      {editing ? 
+      null : (<button onClick={() => setEditing(!editing)}>Edit</button>)}
       {editing ? (
         <>
         <form onSubmit={(e) => handleUpdateProject(e)}>
@@ -110,6 +114,8 @@ export default function ProjectCard({ project, setUser, user }) {
         <button onClick={(e) => (handleDeleteProject(e))}>Delete Project</button>
         </>
       ) : null}
-    </>
+      <br/>
+      <br/>
+    </div>
   );
 }

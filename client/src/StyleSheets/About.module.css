@@ -7,3 +7,21 @@
     margin-left: 30%;
     margin-right: 30%;
 }
+
+#main {
+    background-image: url("../StyleSheets/Ben/Assets/background.jpg");
+    background-size: cover;
+    backdrop-filter: opacity(70%);
+    background-repeat: no-repeat;
+}
+
+#home {
+    background: linear-gradient(to right, transparent, white, white, transparent);
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#home img {
+    width: 20vw;
+}

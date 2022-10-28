@@ -1,4 +1,8 @@
 
+
+
+
+
 #popup_container {
     position: relative;
     text-align: center;
@@ -9,13 +13,43 @@
 
 #popup {
     position: fixed;
-    top: 10%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, 5%);
-    background-color: gray;
-    border: black 3px solid;
+    background-color: white;
+    border: orange 2vmin outset;
+    z-index: 2;
+    padding: 2.5%
+}
+
+#blur {
+    width: 100vmax;
+    height: 100vmax;
+    z-index: 1;
+    filter: blur(3px);
+    position: fixed;
 }
 
 #login_form {
-    color: black;
+    color: darkorange;
 }
+
+button {
+    font-size: large;
+    font-weight: bold;
+    padding: 2.5%;
+    border: orange outset 1vmin;
+}
+button:active {
+    border: orange inset 1vmin;
+}
+
+input {
+    margin: 5px;
+}
+
+#bio {
+    width: 50%;
+    height: 5vh;
+}
+

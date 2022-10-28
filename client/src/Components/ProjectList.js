@@ -1,6 +1,7 @@
 import ProjectCard from "./ProjectCard";
 import { v4 as uuid } from "uuid";
 import { useState }  from "react";
+import style from "../StyleSheets/ProjectList.module.css";
 
 export default function ProjectList ({ user, setUser }) {
     const [ title, setTitle ] = useState("");
@@ -13,11 +14,12 @@ export default function ProjectList ({ user, setUser }) {
 
     const projects = user.projects.map((p) => {
         return (
-            <ProjectCard user={user} setUser={setUser} key={uuid()} project={p} />
+            <>
+                <ProjectCard user={user} setUser={setUser} key={uuid()} project={p} />
+            <br />
+            </>
         )
     })
-
-    
 
     function handleAddProject(e) {
         e.preventDefault();
@@ -59,6 +61,7 @@ export default function ProjectList ({ user, setUser }) {
 
         {projects}
 
+        <div id={style.add}>
         <h1>Add Projects</h1>
         { !isAdding ?
         <button onClick={() => setIsAdding(true)}>New</button>
@@ -114,6 +117,9 @@ export default function ProjectList ({ user, setUser }) {
             <button type="submit">Add Project</button>
         </form>
         : null }
+        <br />
+        <br />
+        </div>
         </>
     )
 }

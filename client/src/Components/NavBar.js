@@ -2,6 +2,7 @@ import { redirect, NavLink, Link } from "react-router-dom";
 import { useState } from 'react';
 import LoginSignUp from './LoginSignUp';
 import style from "../StyleSheets/NavBar.module.css";
+import logo from "../StyleSheets/Ben/Assets/Logo.png";
 
 export default function NavBar({ user, onLogin }) {
     const [ logging, setLogging ] = useState(false);
@@ -21,7 +22,12 @@ export default function NavBar({ user, onLogin }) {
       <nav id={style.NavBar}>
 
         <div id={style.header}>
-        <h1>Logo PlaceHolder</h1>
+          <img src={logo} alt="Logo"/>
+          {!logging && !user ?
+          <div id={style.loginbtndiv}>
+            <button id={style.loginbtn} onClick={() => setLogging(true)} >0</button>
+          </div>
+          : null}
         </div>
 
         <div id={style.nav_btn_bar}>
@@ -37,11 +43,11 @@ export default function NavBar({ user, onLogin }) {
         </NavLink>
         : null }
         
-        {!logging && !user ?
-        <div className={style.NavButtonDiv}>
-          <button className={style.NavButton} onClick={() => setLogging(true)} >Login/SignUp</button>
+        {/* {!logging && !user ?
+        <div id={style.loginbtndiv}>
+          <button id={style.loginbtn} onClick={() => setLogging(true)} >Login/SignUp</button>
         </div>
-        : null}
+        : null} */}
 
         {logging ?
         <>
