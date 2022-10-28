@@ -445,8 +445,8 @@ input[type="checkbox"]:not(:checked) ~ div {
 }
 
 #arrowcontainer {
-  border: .2rem solid red;
-
+  animation: fade-in 10s ease-in-out forwards;
+  /* border: .2rem solid red; */
   position: fixed;
   top: 46%;
   right: 8%;
@@ -479,7 +479,6 @@ input[type="checkbox"]:not(:checked) ~ div {
   border-top: 2rem solid var(--txt);
   border-left: 1rem solid transparent;
   border-right: 1rem solid transparent;
-
 }
 
 #pentagon:after{

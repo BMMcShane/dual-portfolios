@@ -12,6 +12,7 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
     }
 
     function animateAndNavigate() {
+        console.log(true);
         setIsLeaving(true);
         setTimeout(() => {
             setGo(true)
@@ -43,9 +44,9 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
             {/* absolute positioned title appears */}
             { isClicked && !isLeaving && p.title === selectedProject ?
             <>
-                <div id={style.arrowcontainer}>
-                    <div id={style.pentagon}></div>
-                    <div id={style.triangle}></div>
+                <div className={style.fade_in} id={style.arrowcontainer}>
+                    <div onClick={() => animateAndNavigate} id={style.pentagon}></div>
+                    <div onClick={() => animateAndNavigate} id={style.triangle}></div>
                 </div>
                 <div id={style.back_arrow}></div>
 
