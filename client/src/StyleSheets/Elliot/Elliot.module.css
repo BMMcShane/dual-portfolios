@@ -199,6 +199,10 @@ input[type="checkbox"]:not(:checked) ~ div {
   /* border: .2rem solid red; */
 }
 
+.absolute_title:hover {
+  color: var(--bkg);
+}
+
 @keyframes blurfadein {
   0% {
     transform: perspective(40rem) rotateY(90deg);
@@ -449,7 +453,7 @@ input[type="checkbox"]:not(:checked) ~ div {
 }
 
 #arrowcontainer {
-  animation: fade-in 10s ease-in-out forwards;
+  animation: fade-in 8s ease-in-out forwards;
   /* border: .2rem solid red; */
   position: fixed;
   top: 46%;
@@ -457,8 +461,11 @@ input[type="checkbox"]:not(:checked) ~ div {
   margin-top: 3rem;
   width: 5rem;
   height: 5rem;
-
 }
+
+/* .blinking {
+  animation: blinking .4;
+} */
 
 #triangle {
   position: absolute;
@@ -472,7 +479,29 @@ input[type="checkbox"]:not(:checked) ~ div {
   -webkit-transform: rotate(-135deg);
 }
 
+@keyframes blinking {
+  0% {
+    border-top: 2rem solid var(--txt);
+    border-bottom: 2rem solid var(--txt);
+  }
+  49% {
+    border-top: 2rem solid var(--txt);
+    border-bottom: 2rem solid var(--txt);    
+  }
+  50% {
+    border-top: 2rem solid var(--bkg);
+    border-bottom: 2rem solid var(--bkg);
+  }
+  100% {
+    border-top: 2rem solid var(--bkg);
+    border-bottom: 2rem solid var(--bkg);
+  }
+}
+
 #pentagon {
+  border-top: 2rem solid var(--txt);
+  animation: blinking .4 infinite;
+
   position: absolute;
   top: 55%;
   left: 50%;
@@ -480,12 +509,12 @@ input[type="checkbox"]:not(:checked) ~ div {
   transform: translate(-50%, -50%);
   height: 0;
   width: 2rem;
-  border-top: 2rem solid var(--txt);
   border-left: 1rem solid transparent;
   border-right: 1rem solid transparent;
 }
 
 #pentagon:after{
+  animation: blinking .4;
   position: absolute;
   content: '';
   border-bottom: 2rem solid var(--txt);
