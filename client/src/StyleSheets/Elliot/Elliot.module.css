@@ -444,14 +444,52 @@ input[type="checkbox"]:not(:checked) ~ div {
   animation-fill-mode: forwards;
 }
 
-#forward_arrow {
-  position: fixed;
-  height: 3rem;
-  width: 3rem;
-  border-radius: 1rem;
-  background-color: var(--txt);
-  
+#arrowcontainer {
+  border: .2rem solid red;
 
+  position: fixed;
+  top: 46%;
+  right: 8%;
+  margin-top: 3rem;
+  width: 5rem;
+  height: 5rem;
+
+}
+
+#triangle {
+  position: absolute;
+  top: 10%;
+  left: 43%;
+  border: solid var(--bkg);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3.2px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+#pentagon {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 4rem;
+  transform: translate(-50%, -50%);
+  height: 0;
+  width: 2rem;
+  border-top: 2rem solid var(--txt);
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+
+}
+
+#pentagon:after{
+  position: absolute;
+  content: '';
+  border-bottom: 2rem solid var(--txt);
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  bottom: 2rem;
+  left: -1rem;
 }
 
 @keyframes expand {

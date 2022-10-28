@@ -43,8 +43,12 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
             {/* absolute positioned title appears */}
             { isClicked && !isLeaving && p.title === selectedProject ?
             <>
-                <div id={style.forward_arrow}></div>
+                <div id={style.arrowcontainer}>
+                    <div id={style.pentagon}></div>
+                    <div id={style.triangle}></div>
+                </div>
                 <div id={style.back_arrow}></div>
+
                 <h1 onClick={() => animate()} className={`${style.project_title_basic} ${style.absolute_title}`}>{p.title}</h1>
             </>
             : null }
