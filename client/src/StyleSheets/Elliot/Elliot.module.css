@@ -37,6 +37,7 @@
   /* background-color: #18191f */
 
   --txt: hotpink;
+  --dimtxt: rgb(202, 83, 143);
   --bkg: #14151a;
 
   justify-content: center;
@@ -189,7 +190,7 @@ input[type="checkbox"]:not(:checked) ~ div {
   text-align: right;
   position: fixed;
   width: 36rem;
-  top: 10%;
+  top: 9%;
   left: 7%;
   margin-right: 4rem;
   animation: blurfadein 9s ease-in-out;
@@ -280,7 +281,7 @@ input[type="checkbox"]:not(:checked) ~ div {
 
 .project_details {
   position: fixed;
-  right: 6%;
+  right: 7%;
   color: hotpink;
   margin-top: 23rem;
   margin-left: 2.5rem;
@@ -452,6 +453,40 @@ input[type="checkbox"]:not(:checked) ~ div {
   animation-fill-mode: forwards;
 }
 
+#back_arrow_container {
+  position: relative;
+  right: -5%;
+  transform: translateY(35rem);
+}
+
+#back_arrow_container:hover {
+  color: var(--txt);
+}
+
+#back_arrow_block {
+  position: absolute;
+  height: 2rem;
+  width: 3rem;
+  border-radius: .5rem;
+  background-color: var(--dimtxt);
+  
+  transform: scale(.9);
+}
+
+#back_arrow_triangle {
+  position: absolute;
+  margin-top: -.85rem;
+  transform: translateX(-1.2rem);
+  top: 0%;
+  width: 0; 
+  height: 0;
+  border-radius: .5rem;;
+  border-top: 1.8rem solid transparent;
+  border-bottom: 1.8rem solid transparent;
+  border-right: 1.8rem solid var(--dimtxt);
+}
+
+/* THIS IS PENTAGON CONTAINER */
 #arrowcontainer {
   animation: fade-in 8s ease-in-out forwards;
   /* border: .2rem solid red; */

@@ -19,6 +19,11 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
         }, 800);
     }
 
+    function deselect () {
+        setGo(false);
+        setSelectedProject("");
+    }
+
     const languages = p.languages.map((l) =>{
         return (
             <p key={l.id} className={style.language_p}>&nbsp;&nbsp; . . . {l.name}</p>
@@ -44,13 +49,16 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
             {/* absolute positioned title appears */}
             { isClicked && !isLeaving && p.title === selectedProject ?
             <>
-                <div onClick={() => animateAndNavigate} className={`${style.fade_in}`} id={style.arrowcontainer}>
+                <div onClick={() => animateAndNavigate()} className={`${style.fade_in}`} id={style.arrowcontainer}>
                     <div id={style.pentagon}></div>
                     <div id={style.triangle}></div>
                 </div>
-                <div id={style.back_arrow}></div>
+                <div onClick={() => deselect()} id={style.back_arrow_container}>
+                    <div id={style.back_arrow_block}></div>
+                    <div id={style.back_arrow_triangle}></div>
+                </div>
 
-                <h1 onClick={() => animateAndNavigate} className={`${style.project_title_basic} ${style.absolute_title}`}>{p.title}</h1>
+                <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ${style.absolute_title}`}>{p.title}</h1>
             </>
             : null }
 
