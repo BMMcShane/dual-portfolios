@@ -15,7 +15,7 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
         setIsLeaving(true);
         setTimeout(() => {
             setGo(true)
-        }, 100000);
+        }, 1500);
     }
 
     return (
@@ -32,6 +32,7 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
             { isClicked && !isLeaving ?
             <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + ((p.title !== selectedProject) ? `${style.project_title} ${style.swing_away}` : style.project_title_stabilized )}>{p.title}</h1> : null}
             
+            {/* Project with matching title gets final swing, others become hidden. */}
             { isLeaving ?
             <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + ((p.title !== selectedProject) ? `${style.hidden}` : `${style.project_title} ${style.final_swing}` )}>{p.title}</h1> : null}
 
