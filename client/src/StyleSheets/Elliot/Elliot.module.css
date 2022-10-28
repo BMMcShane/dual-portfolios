@@ -6,14 +6,18 @@
   display: none;
 }
 
-body {
+/* body {
   margin: 0px;
   overflow: hidden;
   height:100vh;
   overflow-y: scroll;
-}
+} */
 
 .elliot {
+  margin: 0px;
+  overflow: hidden;
+  height:100vh;
+  overflow-y: scroll;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */

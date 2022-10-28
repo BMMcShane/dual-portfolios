@@ -1,9 +1,9 @@
-body {
+/* body {
     height: 100%;
 }
 body > div {
     height: 100%;
-}
+} */
 #ben_page {
     height: 100%;
     background: linear-gradient(to bottom, rgb(255, 255, 255),rgba(254, 254, 254, 0.902), rgba(255, 166, 0, 0), rgba(255, 255, 255, 0)), url(../Ben/Assets/background2.jpg);

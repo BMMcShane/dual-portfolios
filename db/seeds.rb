@@ -23,8 +23,15 @@ mountain = Project.create(user_id: User.first.id, title: "Mountain!", descriptio
 foley = Project.create(user_id: User.first.id, title: "Foley Generator 3000!", description: "Foley Assistant", timeframe: "One Week - Sept. 2022", route: "Mountain")
 wunseventy = Project.create(user_id: User.first.id, title: "174!", description: "drum machine", timeframe: "Two Weeks - Aug 2022", route: "174")
 # Ben
-Project.create(user_id: User.second.id, title: "test", description: "test", timeframe: "test", route: "ProjectOne")
-Award.create(project_id: User.second.projects.first.id, name: "very cool project award")
+Project.create(user_id: User.second.id, title: "DnD NPC Generator", description: "A random character generator meant to be used for high fantasy tabletop RPGs.", timeframe: "August 22nd, 2022 - August 25th, 2022", route: "npcgen")
+
+Project.create(user_id: User.second.id, title: "Toad's Tempestuous Test", description: "An inexplicably Mario themed custom quiz generator.", timeframe: "September 12th, 2022 - September 15th, 2022", route: "toadtest")
+Award.create(project_id: User.second.projects.find_by(title: "Toad's Tempestuous Test").id, name: "Tied for the Best Project award.")
+
+Project.create(user_id: User.second.id, title: "MewMew Mill", description: "A Tamogachi / Stardew Valley inspired farming web game.", timeframe: "October 3rd, 2022 - October 6th, 2022", route: "mewmill")
+Award.create(project_id: User.second.projects.find_by(title: "MewMew Mill").id, name: "Best CSS Award")
+
+Project.create(user_id: User.second.id, title: "ProFOL.io", description: "An invite-only portfolio hosting platform.", timeframe: "October 24th, 2022 - October 27th, 2022", route: "profol")
 
 puts "Creating Languages 👾"
 js = Language.create(name: "JavaScript")
@@ -37,6 +44,7 @@ sql = Language.create(name: "SQL")
 sinatra = Language.create(name: "Sinatra")
 
 puts "Linking Projects and Languages 🤝"
+# Elliot
 ProjectLanguage.create(project_id: upquest.id, language_id: css.id)
 ProjectLanguage.create(project_id: upquest.id, language_id: ruby.id)
 ProjectLanguage.create(project_id: upquest.id, language_id: react.id)
@@ -54,5 +62,29 @@ ProjectLanguage.create(project_id: foley.id, language_id: html.id)
 ProjectLanguage.create(project_id: wunseventy.id, language_id: js.id)
 ProjectLanguage.create(project_id: wunseventy.id, language_id: css.id)
 ProjectLanguage.create(project_id: wunseventy.id, language_id: html.id)
+
+# Ben
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "DnD NPC Generator").id, language_id: Language.find_by(name: "CSS").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "DnD NPC Generator").id, language_id: Language.find_by(name: "HTML").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "DnD NPC Generator").id, language_id: Language.find_by(name: "JavaScript").id)
+
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "Toad's Tempestuous Test").id, language_id: Language.find_by(name: "CSS").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "Toad's Tempestuous Test").id, language_id: Language.find_by(name: "HTML").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "Toad's Tempestuous Test").id, language_id: Language.find_by(name: "JavaScript").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "Toad's Tempestuous Test").id, language_id: Language.find_by(name: "React").id)
+
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "MewMew Mill").id, language_id: Language.find_by(name: "CSS").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "MewMew Mill").id, language_id: Language.find_by(name: "HTML").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "MewMew Mill").id, language_id: Language.find_by(name: "JavaScript").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "MewMew Mill").id, language_id: Language.find_by(name: "React").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "MewMew Mill").id, language_id: Language.find_by(name: "Ruby").id)
+
+
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "ProFOL.io").id, language_id: Language.find_by(name: "CSS").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "ProFOL.io").id, language_id: Language.find_by(name: "HTML").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "ProFOL.io").id, language_id: Language.find_by(name: "JavaScript").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "ProFOL.io").id, language_id: Language.find_by(name: "React").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "ProFOL.io").id, language_id: Language.find_by(name: "Ruby").id)
+ProjectLanguage.create(project_id: User.second.projects.find_by(title: "ProFOL.io").id, language_id: Language.find_by(name: "Rails").id)
 
 puts "Database Seeded ✅✅✅✅✅✅"
