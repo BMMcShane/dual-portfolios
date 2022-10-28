@@ -25,8 +25,6 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
         )
     })
 
-    console.log(languages)
-
     return (
         <>
             { go ?
@@ -38,20 +36,31 @@ export default function ElliotProject ({ p, isClicked, setIsClicked, selectedPro
             {selectedProject === "" ?
             <h1 onClick={() => animate()} className={`${style.project_title_basic} ${style.project_title}`}>{p.title}</h1> : null }
 
-            {/* Project w/ matching title stabilizes, others swing away. */}
+            {/* Project w/ matching title swings slowly, others swing quickly. */}
             { isClicked && !isLeaving ?
-            <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + ((p.title !== selectedProject) ? `${style.project_title} ${style.swing_away}` : style.project_title_stabilized )}>{p.title}</h1> : null }
+            <h1 onClick={() => animateAndNavigate()} className={`${style.project_title_basic} ` + ((p.title !== selectedProject) ? `${style.project_title} ${style.swing_away}` : `${style.project_title} ${style.delay4} ${style.final_swing}` )}>{p.title}</h1> : null }
+
+            {/* absolute positioned title appears */}
+            { isClicked && !isLeaving && p.title === selectedProject ?
+            <>
+                <div id={style.forward_arrow}></div>
+                <div id={style.back_arrow}></div>
+                <h1 onClick={() => animate()} className={`${style.project_title_basic} ${style.absolute_title}`}>{p.title}</h1>
+            </>
+            : null }
 
             {/* RENDER DETAILS */}
             { isClicked && !isLeaving && p.title === selectedProject ?
 
-            <div className={style.project_details}>
-                <h1 className={style.tagline}>{p.description} . . .&nbsp;&nbsp;</h1>
-                <div id={style.thin_description_line}></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at facilisis risus. Curabitur ut nisl dui. Quisque sodales mauris ut lacinia mollis. Donec tortor leo, ultricies et lectus sed, efficitur luctus neque. Integer quis augue nunc. Proin facilisis tempor nulla vel mollis. Proin luctus, mauris non rutrum mattis, orci nunc lacinia est, vitae tristique erat mi id leo. In vitae semper sem.</p>
-                <h2 className={style.timeframe}>{p.timeframe}</h2>
-                <div className={style.inline_block_p}>
-                {languages}
+            <div className={`${style.project_details}`}>
+                <h1 className={`${style.tagline} ${style.slide_in} ${style.off_left}`}>{p.description} . . .&nbsp;&nbsp;</h1>
+                <div id={`${style.thin_description_line}`}></div>
+                <p className={`${style.fade_in}`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at facilisis risus. Curabitur ut nisl dui. Quisque sodales mauris ut lacinia mollis. Donec tortor leo, ultricies et lectus sed, efficitur luctus neque. Integer quis augue nunc. Proin facilisis tempor nulla vel mollis. Proin luctus, mauris non rutrum mattis, orci nunc lacinia est, vitae tristique erat mi id leo. In vitae semper sem.</p>
+                <div id={style.timelang}>
+                    <div className={`${style.inline_block_p} ${style.slide_in} ${style.off_right}`}>
+                        {languages} :
+                    </div>
+                    <h2 className={`${style.timeframe} ${style.slide_in} ${style.off_right}`}>: {p.timeframe}</h2>
                 </div>
             </div>
 

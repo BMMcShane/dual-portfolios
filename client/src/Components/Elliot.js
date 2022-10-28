@@ -30,6 +30,7 @@ export default function Elliot ({ database }) {
             {/* KEEP THIS SHIT AT THE TOP */}
             <div id={style.video_container}>
             <div id={style.cover}></div>
+            <div id={style.darken}></div>
             <video id="myVideo" loop autoPlay muted>
                 <source src={video} type="video/mp4" />
             </video>
@@ -38,11 +39,11 @@ export default function Elliot ({ database }) {
             
 
 
-            <div id={style.details}>
+            {/* <div id={style.cog}>
                 <div className={style.glyphbar}></div>
                 <div className={style.glyphbar}></div>
                 <div className={style.glyphbar}></div>
-            </div>
+            </div> */}
 
 
             {/* { !isEntered ? */}
